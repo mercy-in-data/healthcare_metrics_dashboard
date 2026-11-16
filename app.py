@@ -36,9 +36,7 @@ metrics = [
 staff_types = [
     "RN",
     "LPN",
-    "CNA",
-    "Nursing Assistant Trainee",
-    "Medication Aide"
+    "CNA"
 ]
 
 # 6. Create the sidebar
@@ -63,10 +61,7 @@ selected_states = st.sidebar.multiselect(
 # 9. Staff type filter
 if selected_metric != "Bed Utilization by State":
 
-    if selected_metric == "Staffing and Readmissions":
-        available_staff_types = ["RN", "LPN", "CNA"]
-    else:
-        available_staff_types = staff_types
+    available_staff_types = staff_types
 
     selected_staff_type = st.sidebar.selectbox(
         "Select Staff Type",
@@ -188,9 +183,7 @@ elif selected_metric == "Facility Staffing Distribution by Staff Type":
     staffing_columns = {
         "RN": "rn_hours_per_resident_day",
         "LPN": "lpn_hours_per_resident_day",
-        "CNA": "cna_hours_per_resident_day",
-        "Nursing Assistant Trainee": "na_trn_hours_per_resident_day",
-        "Medication Aide": "med_aide_hours_per_resident_day"
+        "CNA": "cna_hours_per_resident_day"
     }
 
     selected_column = staffing_columns[selected_staff_type]
@@ -418,9 +411,7 @@ elif selected_metric == "Staffing Intensity by State":
     staffing_columns = {
         "RN": "rn_hours_per_resident_day",
         "LPN": "lpn_hours_per_resident_day",
-        "CNA": "cna_hours_per_resident_day",
-        "Nursing Assistant Trainee": "na_trn_hours_per_resident_day",
-        "Medication Aide": "med_aide_hours_per_resident_day"
+        "CNA": "cna_hours_per_resident_day"
     }
 
     selected_column = staffing_columns[selected_staff_type]
@@ -437,9 +428,7 @@ elif selected_metric == "Staffing Intensity by State":
         staffing_hours_columns = {
             "RN": "total_rn_hours",
             "LPN": "total_lpn_hours",
-            "CNA": "total_cna_hours",
-            "Nursing Assistant Trainee": "total_na_trn_hours",
-            "Medication Aide": "total_med_aide_hours"
+            "CNA": "total_cna_hours"
         }
 
         total_staffing_hours = filtered_state_df[
